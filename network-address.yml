@@ -62,6 +62,6 @@ networks:
     ipam:
       driver: default
       config:
-      - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV4:-10.168.8.0/18}
+      - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV4:-10.168.128.0/18}
       - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV6:-fd00:1:be:a:7001:0:3e:6000/116}
     attachable: true
