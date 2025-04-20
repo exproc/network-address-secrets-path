@@ -43,7 +43,7 @@ networks:
       - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV4:-172.61.128.0/18}
       - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV6:-fd00:1:be:a:7001:0:3e:9000/116}
     attachable: true
-    
+
   montering:
     name: ${NETWORKS_montering_NAME:-montering-stack}
     driver: bridge
@@ -53,5 +53,15 @@ networks:
       config:
       - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV4:-172.68.128.0/18}
       - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV6:-fd00:1:be:a:7001:0:3e:1000/116}
-    attachable: true   
+    attachable: true
 
+  "internal:":
+    name: ${NETWORKS_internal_NAME:-internal}
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      driver: default
+      config:
+      - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV4:-10.168.18.0/18}
+      - subnet: ${NETWORKS_CUSTOM_SUBNET_IPV6:-fd00:1:be:a:7001:0:3e:6000/116}
+    attachable: true
